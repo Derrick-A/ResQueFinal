@@ -1,0 +1,520 @@
+html, body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #CFDDE9;
+    height: 100vh;  /* Ensure the body takes up the full viewport height */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* the whole left side section */
+<<<<<<< HEAD
+.sidebar {
+    background-color: #12222E;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 17.5rem; /* 280px 17.5rem converted to rem */
+    padding: 1.25rem; /* 20px converted to rem */
+    height: 100vh; /* Ensure sidebar takes up full height */
+    top: 0;
+}
+
+.sidebar .profile {
+    position: absolute;
+    font-size: 0.85rem; /* 85% of 16px */
+    bottom: 2.5rem; /* 40px converted to rem */
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-pic {
+    background-color: #ddd;
+    color: #333;
+    width: 2.8125rem; /* 45px converted to rem */
+    height: 2.8125rem; /* 45px converted to rem */
+    border-radius: 50%;
+    margin: 0 auto;
+    line-height: 3.125rem; /* 50px converted to rem */
+    font-size: 1.25rem; /* 20px converted to rem */
+    float: left;
+    text-align: center;
+}
+
+.profile-info {
+    margin-left: 1.25rem; /* 20px converted to rem */
+    /* padding-left: -20px; */
+    font-weight: bold;
+    flex-grow: 1;
+    line-height: 1.9375rem; /* 155% of 16px */
+}
+
+.sidebar .profile-info .role {
+    font-weight: lighter;
+}
+
+#sidebar-log-out {
+    float: right;
+    flex-grow: 1.5;
+}
+
+/* provides vertical spacing between each list item */
+/* For the search bar */
+.search {
+    --padding: 0.875rem; /* 14px converted to rem */
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 0.5rem; /* 8px converted to rem */
+    background: #ddd;
+    width: 13.4375rem; /* 215px converted to rem */
+}
+
+.search-input{
+    font-size: 1rem; /* 16px */
+    font-family: 'Inter', sans-serif;
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+    transition: background 0.25s;
+}
+
+.search:focus-within {
+    background: #f6f6f6;
+}
+
+.search-input::placeholder,
+.search-icon {
+    color: #666;
+}
+
+
+/* removes the bullet points */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 0.9375rem; /* 15px converted to rem */
+}
+
+nav ul li a {
+    align-items: center;
+    text-decoration: none;  /* removes the underline */
+    color: #333;    /* sets the text color */
+    font-size: 1.125rem;   /* 18px converted to rem */
+    display: block; /* makes the link a block-level element */
+    padding: 0.9375rem; /* 15px converted to rem */
+    border-radius: 0.5rem; /* 8px converted to rem */
+    transition: background-color 0.25s; /* adds a smooth color transition */
+    width: 13.4375rem; /* Matches the width of the search bar */
+}
+
+/* Style for the active class */
+nav ul li a.active {
+    background-color: #A020F0; /* Purple background when active */
+    color: #fff; /* White text when active */
+}
+
+nav ul li a img{
+    margin-right: 0.5rem;  /* 8px converted to rem */
+    width: 1.5rem;    /* 24px converted to rem */
+    height: 1.5rem;   /* 24px converted to rem */
+    object-fit: contain;    /* ensures the icon fits within the specified width and height */
+}
+
+nav ul li a:hover {
+    background-color: #A020F0;
+}
+
+.profile {
+    text-align: left;
+    margin-top: auto;
+    padding: 0.5625rem; /* 9px converted to rem */
+    border-top: 0.0625rem solid #ddd; /* 1px converted to rem */
+    position: relative; /* Position relative to use pseudo-elements */
+}
+
+/* Styling for active links within the sidebar-links section */
+.sidebar-links.active {
+    background-color: #A020F0;
+    color: #fff;
+}
+
+.role {
+    color: #666;
+}
+=======
+>>>>>>> dc1a06d1211c19d22d0a6719aae7b0ecb3fe05c9
+
+/* left section ends here */
+
+.logo {
+    font-size: 1.5rem; /* 24px converted to rem */
+    font-weight: 700;
+    margin-bottom: 1.875rem; /* 30px converted to rem */
+}
+
+/* moving ResQue logo to the right */
+.logo-container {
+    position: absolute;
+    top: 20px; /* Adjust the top position as needed */
+    right: 70px; /* Adjust the right position as needed */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.logo-container img {
+    max-width: 100px; /* Adjust the size as needed */
+    height: auto;
+}
+
+.content {
+    padding: 2rem;
+    padding-right: 4.5rem;
+    position: relative;
+    margin-left: 17.5rem; /* Matches the width of the sidebar */
+    flex-direction: column;
+    overflow-y: auto;
+    display: flex;
+    flex-grow: 1;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem; /* 20px converted to rem */
+}
+
+h1 {
+    font-size: 1.75rem; /* 28px converted to rem */
+    margin-bottom: 0.625rem; /* 10px converted to rem */
+}
+
+/* Styling for ticket type (open, closed or all) within the header */
+h1 .ticket_type, .comment_time {
+    color: #A020F0; /* Purple color for type text */
+}
+
+.fade-out {
+    color: #666;
+    margin-bottom: 1.25rem; /* 20px converted to rem */
+}
+
+.header-logo {
+    width: 6.25rem; /* 100px converted to rem */
+    height: auto;
+}
+
+
+/* ticket list and ticket detail section */
+/* Flexbox container for ticket list and ticket detail */
+.content-wrapper {
+    display: flex;
+    gap: 2rem;
+    height: 100hv;
+}
+
+.add-ticket {
+    background-color: #A020F0;  /* Purple background */
+    color: #fff;  /* White text */
+    border: none;  /* No border */
+    padding: 15px 20px;  /* Padding for size */
+    border-radius: 25px;  /* Rounded corners */
+    cursor: pointer;  /* Pointer cursor on hover */
+    font-size: 16px;  /* Font size */
+    transition: background-color 0.3s ease;  /* Smooth background transition */
+    width: 100%;
+}
+.add-ticket:hover {
+    background-color: #A020F0;  /* Darker purple on hover */
+}
+
+.ticket-list {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto; /* Enables scrolling within each section */
+}
+
+/* Make scrollbar so that only 3 tickets are displayed at a time */
+.scrollbar {
+    width: 100%;
+    /* height: 9%; */
+    min-height: 0px;
+    max-height: 350px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ticket-card {
+    background-color: #fff;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.ticket-card:hover {
+    border-color: #A020F0;
+}
+
+.ticket-number {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Styles for status: opened, pending and rejected */
+.status.confirmed {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: royalblue; /* green text color */
+    border: 0.03125rem solid royalblue; /* green border for opened status */
+}
+
+.status.opened {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #333; /* Dark grey text color */
+    border: 0.03125rem solid grey; /* Grey border for opened status */
+}
+
+.status.rejected {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: red; /* red text color */
+    border: 0.03125rem solid red; /* red border for rejected status */
+}
+
+.status.completed {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #37b24d; /* green text color */
+    border: 0.03125rem solid #37b24d; /* green border for completed status */
+}
+
+/* Colors for confrimed status circle */
+.status.confirmed .circle {
+    background-color: royalblue; /* green color for confirmed status circle */
+}
+
+/* Colors for opened status circle */
+.status.opened .circle {
+    background-color: grey; /* Grey color for opened status circle */
+}
+
+/* Colors for rejected status circle */
+.status.rejected .circle {
+    background-color: red; /* red color for rejected status circle */
+}
+
+/* Colors for completed status circle */
+.status.status.completed .circle {
+    background-color: #37b24d; /* green color for completed status circle */
+}
+
+/* Small circular indicators */
+.circle {
+    border-radius: 50%; /* Circular shape */
+    width: 0.4375rem; /* Fixed width */
+    height: 0.4375rem; /* Fixed height */
+    display: inline-block; /* Inline block display */
+}
+
+/* Details button */
+.details-button, .comment-button {
+    background-color: grey; /* Purple color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none; /* Removes the underline */
+}
+/* Details button */
+.details-button:hover, .comment-button:hover {
+    background-color: #A020F0; /* Darker purple on hover */
+}
+
+.ticket-table {
+    width: 100%; /* Adjust the width as needed */
+    border-spacing: 0; /* Remove spacing between table cells */
+    margin-bottom: 20px;
+    
+}
+
+.ticket-table tr {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.ticket-table td {
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Ticket Detail */
+.ticket-detail {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex: 1;
+    flex-direction: column;
+    overflow-y: auto; /* Enables scrolling within each section */
+}
+
+.ticket-detail img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.ticket-detail .ticket-info {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* flex: 1; */
+    margin-top: 1.25rem;  /* 20px */
+}
+
+.ticket-detail .ticket-info h3 {
+    margin-top: 1.25rem; /* 20px */
+    font-size: 1.5rem; /* 24px */
+    font-weight: bold;
+    color: #333;
+}
+
+/* Styling for the table */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-cell {
+    width: 33.33%; /* Ensure 3 cells per row */
+    padding: 1rem 0; /* Vertical padding */
+    text-align: left;
+    vertical-align: top;
+}
+
+.info-label {
+    display: block;
+    font-size: 1rem; /* 16px */
+    color: #777; /* Light gray for labels */
+}
+
+.info-data, .commentor {
+    display: block;
+    font-size: 1.1rem; /* 20px */
+    font-weight: bold;
+    color: #333; /* Dark grey for data */
+    margin-top: 0.25rem; /* Small space between label and data */
+}
+
+.comment-list {
+    margin-top: 20px;
+}
+
+.comment-bubble {
+    background-color: #f0f0f0;  /* Light grey background for the comment bubble */
+    padding: 10px;
+    border-radius: 10px;  /* Rounded corners to create the bubble effect */
+    margin-bottom: 10px;
+    max-width: 90%;  /* Ensure the bubble doesn't span too wide */
+    word-wrap: break-word;  /* Allow text to wrap within the bubble */
+    font-size: 14px;
+    color: #333;
+}
+
+.comment-bubble strong {
+    font-weight: 600;  /* Bold the user name */
+    margin-bottom: 5px;
+}
+
+.comment-bubble dd {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* Carousel container for image viewing */
+.carousel {
+    position: relative;
+    width: 100%; /* Adjust as needed */
+    max-width: 600px; /* Maximum width of the carousel */
+    margin: auto; /* Center the carousel */
+    overflow: hidden; /* Hide overflowing images */
+}
+
+/* Container for all slides */
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 400px; /* Set a fixed height for the image display box */
+}
+
+.carousel-slide {
+    min-width: 100%; /* Each image takes up full width of the carousel */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Images in the carousel */
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Resize image to fit within the container while maintaining aspect ratio */
+}
+
+/* Navigation Buttons */
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* End of carousel container for image viewing */

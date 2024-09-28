@@ -1,0 +1,317 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100vh; /* Ensure the body takes up the full viewport height */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* the whole left side section */
+.sidebar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 17.5rem; /* 280px converted to rem */
+    padding: 1.25rem; /* 20px converted to rem */
+    height: 100vh; /* Ensure sidebar takes up full height */
+}
+
+.sidebar .profile {
+    position: absolute;
+    font-size: 0.85rem; /* 85% of 16px */
+    bottom: 2.5rem; /* 40px converted to rem */
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-pic {
+    background-color: #ddd;
+    color: #333;
+    width: 2.8125rem; /* 45px converted to rem */
+    height: 2.8125rem; /* 45px converted to rem */
+    border-radius: 50%;
+    margin: 0 auto;
+    line-height: 3.125rem; /* 50px converted to rem */
+    font-size: 1.25rem; /* 20px converted to rem */
+    float: left;
+    text-align: center;
+}
+
+.profile-info {
+    margin-left: 1.25rem; /* 20px converted to rem */
+    /* padding-left: -20px; */
+    font-weight: bold;
+    flex-grow: 1;
+    line-height: 1.9375rem; /* 155% of 16px */
+}
+
+.sidebar .profile-info .role {
+    font-weight: lighter;
+}
+
+#sidebar-log-out {
+    float: right;
+    flex-grow: 1.5;
+}
+
+/* provides vertical spacing between each list item */
+/* For the search bar */
+.search {
+    --padding: 0.875rem; /* 14px converted to rem */
+    display: flex;
+    align-items: center;
+    padding: var(--padding);
+    border-radius: 0.5rem; /* 8px converted to rem */
+    background: #ddd;
+    width: 13.4375rem; /* 215px converted to rem */
+}
+
+.search-input{
+    font-size: 1rem; /* 16px */
+    font-family: 'Inter', sans-serif;
+    color: #333333;
+    margin-left: var(--padding);
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+    transition: background 0.25s;
+}
+
+.search:focus-within {
+    background: #f6f6f6;
+}
+
+.search-input::placeholder,
+.search-icon {
+    color: #666;
+}
+
+/* removes the bullet points */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 0.9375rem; /* 15px converted to rem */
+}
+
+nav ul li a {
+    align-items: center;
+    text-decoration: none;  /* removes the underline */
+    color: #333;    /* sets the text color */
+    font-size: 1.125rem;   /* 18px converted to rem */
+    display: block; /* makes the link a block-level element */
+    padding: 0.9375rem; /* 15px converted to rem */
+    border-radius: 0.5rem; /* 8px converted to rem */
+    transition: background-color 0.25s; /* adds a smooth color transition */
+    width: 13.4375rem; /* Matches the width of the search bar */
+}
+
+nav ul li a img{
+    margin-right: 0.5rem;  /* 8px converted to rem */
+    width: 1.5rem;    /* 24px converted to rem */
+    height: 1.5rem;   /* 24px converted to rem */
+    object-fit: contain;    /* ensures the icon fits within the specified width and height */
+}
+
+nav ul li a:hover {
+    background-color: #A020F0;
+}
+
+/* Styling for active links within the sidebar-links section */
+.sidebar-links.active {
+    background-color: #A020F0;
+    color: #fff;
+}
+
+.profile {
+    text-align: left;
+    margin-top: auto;
+    padding: 0.5625rem; /* 9px converted to rem */
+    border-top: 0.0625rem solid #ddd; /* 1px converted to rem */
+    position: relative; /* Position relative to use pseudo-elements */
+}
+
+.role {
+    color: #666;
+}
+
+/* the left side section ends here */
+
+.logo {
+    font-size: 1.5rem; /* 24px converted to rem */
+    font-weight: 700;
+    margin-bottom: 1.875rem; /* 30px converted to rem */
+}
+
+.content {
+    flex-grow: 1;
+    padding: 2.5rem;
+    padding-right: 5rem;
+    background-color: #f0f0f0;
+    position: relative;
+    height: 100vh; /* Ensure content area takes up full height */
+    margin-left: 17.5rem; /* Matches the width of the sidebar */
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem; /* 20px converted to rem */
+}
+
+h1 {
+    font-size: 1.75rem; /* 28px converted to rem */
+    margin-bottom: 0.625rem; /* 10px converted to rem */
+}
+
+.fade-out {
+    color: #666;
+    margin-bottom: 1.25rem; /* 20px converted to rem */
+}
+
+.header-logo {
+    width: 6.25rem; /* 100px converted to rem */
+    height: auto;
+}
+
+.requisition-form {
+    width: 100%; /* Form takes up the full width of its container */
+    background-color: #fff; /* White background for the form */
+    padding: 1.875rem; /* Padding inside the form to create space around the content */
+    border-radius: 0.5rem; /* Rounded corners for the form */
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the form for depth */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    overflow: auto; /* Adds scrollbars if the form content overflows */
+}
+
+.form-header {
+    margin-bottom: 1.25rem; /* Space below the header section */
+    border-bottom: 0.0625rem solid #ddd; /* A thin border below the header to separate it from the rest of the form */
+    padding-bottom: 0.625rem; /* Space below the header text */
+}
+
+.form-group {
+    display: flex; /* Aligns the label and input elements side by side */
+    align-items: center; /* Vertically centers the label and input elements */
+    margin-bottom: 1.25rem; /* Space below each form group (label and input pair) */
+    border-bottom: 0.0625rem solid #ddd; /* A thin border below each form group for separation */
+    padding-bottom: 0.625rem; /* Space below the form group content */
+    /* flex: 1; */
+    /* flex-direction: column; */
+}
+
+.form-extra-info, #fault-cat {
+    margin-bottom: 0.625rem; /* Space below any additional information like small text */
+    max-width: 30%; /* Limits the width of the labels */
+    /* padding: 0 2rem; Adds padding inside the label to create space around the content */
+    overflow-wrap: break-word; /* Ensures text breaks within the label if it’s too long */
+}
+
+.form-group small {
+    color: #666; /* Light grey color for any small text in the form */
+}
+
+.form-group select,
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 32rem; /* Specifies a fixed width for dropdowns, text areas, and file inputs */
+    padding: 0.625rem; /* Padding inside the input fields to create space around the content */
+    border: 0.0625rem solid #ddd; /* A thin border around the input fields */
+    border-radius: 0.25rem; /* Slightly rounded corners for the input fields */
+    font-size: 1rem; /* Sets the font size inside the input fields */
+    background-color: #fff; /* White background for input fields */
+    color: #333; /* Dark grey text color for readability */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width */
+    display: block; /* Makes input elements block-level, taking up the full width specified */
+    margin: 0 auto; /* Centers the input elements within the form group */
+}
+
+.form-group textarea {
+    height: auto; /* Allows the textarea to grow in height based on content */
+    resize: vertical; /* Enables vertical resizing of the textarea by the user */
+}
+
+.form-actions {
+    display: flex; /* Aligns the cancel and submit buttons side by side */
+    justify-content: space-between; /* Distributes space evenly between the buttons, pushing them to the far left and right */
+    margin-top: 1.875rem; /* Adds space above the action buttons */
+}
+
+.cancel-btn {
+    width: 100%; /* Button takes up the full width of its container */
+    background-color: #DA0707; /* Red background color for the cancel button */
+    color: #fff; /* White text color for the cancel button */
+    border: none; /* Removes the border around the button */
+    padding: 0.625rem 1.25rem; /* Padding inside the button for spacing */
+    font-size: 1rem; /* Sets the font size for the button text */
+    border-radius: 0.25rem; /* Slightly rounded corners for the button */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+}
+
+.submit-btn {
+    width: 100%; /* Button takes up the full width of its container */
+    background-color: #A020F0; /* Purple background color for the submit button */
+    color: #fff; /* White text color for the submit button */
+    border: none; /* Removes the border around the button */
+    padding: 0.625rem 1.25rem; /* Padding inside the button for spacing */
+    font-size: 1rem; /* Sets the font size for the button text */
+    border-radius: 0.25rem; /* Slightly rounded corners for the button */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+}
+
+.cancel-btn:hover,
+.submit-btn:hover {
+    opacity: 0.8; /* Slightly reduces the opacity on hover to create a visual effect */
+    padding-left: 2rem;
+}
+
+.form-group label {
+    flex: 0 0 12.5rem; /* Sets a fixed width for the labels, keeping them aligned and consistent */
+    margin-right: 1.25rem; /* Space to the right of the label to separate it from the input field */
+    /* text-align: center; Aligns the label text to the center */
+}
+
+.form-input {
+    flex: 1; /* Allows the input field to take up the remaining space next to the label */
+}
+
+.form-input textarea {
+    height: 6.25rem; /* Sets a fixed height for text areas */
+    resize: vertical; /* Allows users to resize text areas vertically */
+}
+
+/* Adjustments to make Fault Category and Severity float left */
+.fault-cat,
+.severity {
+    padding-left: 2rem;
+    width: 30%;
+}
+
+.form-header,
+.form-extra-info {
+    padding: 0 2rem; /* Adds padding around the content in the form header and extra information */
+    overflow-wrap: break-word; /* Ensures text breaks within the content if it’s too long */
+}
+
+/* Ensuring buttons look consistent */
+.cancel-btn,
+.submit-btn {
+    display: inline-block; /* Makes the buttons inline-block elements to align them side by side */
+    width: 48%; /* Adjusts the width to allow the buttons to fit side by side */
+    margin-right: 2%; /* Adds space between the buttons */
+}
+
+.cancel-btn:last-child {
+    margin-right: 0; /* Removes the right margin from the last button */
+}

@@ -1,0 +1,344 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    background-color: #CFDDE9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: fixed;
+    width: 17rem; /* 280px */
+    background-color: #12222E;
+    padding: 1.5rem; /* 24px */
+    padding-top: 2.5rem; /* Add extra padding to accommodate the logo height */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* 8px */
+    height: 100vh; /* Ensure sidebar takes up full height */
+    transition: width 0.4s ease;
+}
+
+.sidebar.collapsed {
+    width: 8rem; /* 80px */
+}
+
+.sidebar__collapse-button {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem; /* 24px */
+    height: 2rem; /* 24px */
+    border-radius: 1rem; /* 16px */
+    background-color: #f5f5f5;
+    border: 0.0625rem solid #a9aeb4; /* 1px */
+    right: -1rem; /* -10px */
+    top: 4rem; /* Adjusted to be below the logo */
+    z-index: 10; /* Ensure it’s above other elements */
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* 8px */
+    padding: 0.625rem; /* 10px */
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.sidebar-item img {
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+}
+
+/* Hide text labels in collapsed state */
+.sidebar.collapsed .sidebar-item span,
+.sidebar.collapsed .search-input,
+.sidebar.collapsed .profile-info {
+    display: none; /* Hide text */
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* 8px */
+    margin-top: auto;
+}
+
+.profile-pic {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+    background-color: #b197fc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+nav ul li a {
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.125rem; /* 18px */
+    display: flex; /* Change to flex for icon and text alignment */
+    padding: 0.5rem;
+    border-radius: 0.5rem; /* 8px */
+    transition: background-color 0.25s;
+    width: 100%; /* Full width for items */
+}
+
+nav ul li a img {
+    margin-right: 0.5rem; /* 8px */
+    width: 1.5rem; /* 24px */
+    height: 1.5rem; /* 24px */
+    object-fit: contain;
+}
+
+nav ul li a:hover {
+    background-color: #B45C3D;
+}
+
+.profile {
+    text-align: left;
+    margin-top: auto;
+    padding: 0.5625rem; /* 9px */
+    border-top: 0.0625rem solid #ddd; /* 1px */
+    position: relative;
+    color: white;
+}
+
+.role {
+    color: white;
+}
+
+.logo {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    margin-bottom: 1.875rem; /* 30px */
+    color: white;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 2.5rem;
+    padding-right: 5rem;
+    position: relative;
+    height: 100vh;
+    margin-left: 17.5rem; /* Matches the width of the sidebar */
+    /* Allows scrolling if content overflows */
+    /* overflow-y: auto;  */
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem; /* 20px */
+}
+
+h1 {
+    font-size: 1.75rem; /* 28px */
+    margin-bottom: 0.625rem; /* 10px */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 15rem; /* Adjusted width for smaller screens */
+    }
+    
+    .sidebar.collapsed {
+        width: 5rem; /* Maintain collapsed width */
+    }
+
+    .content {
+        margin-left: 15rem; /* Adjust for smaller screens */
+    }
+
+    .search, nav ul li a {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .search-input {
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 12rem; /* Further adjust for mobile devices */
+    }
+    
+    .sidebar.collapsed {
+        width: 4rem; /* Maintain collapsed width */
+    }
+
+    .content {
+        margin-left: 12rem; /* Adjust for smaller screens */
+    }
+}
+
+.requisition-form {
+    width: 100%; /* Form takes up the full width of its container */
+    background-color: #fff; /* White background for the form */
+    padding: 1.875rem; /* Padding inside the form to create space around the content */
+    border-radius: 0.5rem; /* Rounded corners for the form */
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the form for depth */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    overflow: auto; /* Adds scrollbars if the form content overflows */
+}
+
+.form-header {
+    margin-bottom: 1.25rem; /* Space below the header section */
+    border-bottom: 0.0625rem solid #ddd; /* A thin border below the header to separate it from the rest of the form */
+    padding-bottom: 0.625rem; /* Space below the header text */
+}
+
+.form-group {
+    display: flex; /* Aligns the label and input elements side by side */
+    align-items: center; /* Vertically centers the label and input elements */
+    margin-bottom: 1.25rem; /* Space below each form group (label and input pair) */
+    border-bottom: 0.0625rem solid #ddd; /* A thin border below each form group for separation */
+    padding-bottom: 0.625rem; /* Space below the form group content */
+    /* flex: 1; */
+    /* flex-direction: column; */
+}
+
+.form-extra-info, #fault-cat {
+    margin-bottom: 0.625rem; /* Space below any additional information like small text */
+    max-width: 30%; /* Limits the width of the labels */
+    /* padding: 0 2rem; Adds padding inside the label to create space around the content */
+    overflow-wrap: break-word; /* Ensures text breaks within the label if it’s too long */
+}
+
+.form-group small {
+    color: #666; /* Light grey color for any small text in the form */
+}
+
+.form-group select,
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 32rem; /* Specifies a fixed width for dropdowns, text areas, and file inputs */
+    padding: 0.625rem; /* Padding inside the input fields to create space around the content */
+    border: 0.0625rem solid #ddd; /* A thin border around the input fields */
+    border-radius: 0.25rem; /* Slightly rounded corners for the input fields */
+    font-size: 1rem; /* Sets the font size inside the input fields */
+    background-color: #fff; /* White background for input fields */
+    color: #333; /* Dark grey text color for readability */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width */
+    display: block; /* Makes input elements block-level, taking up the full width specified */
+    margin: 0 auto; /* Centers the input elements within the form group */
+}
+
+.form-group textarea {
+    height: auto; /* Allows the textarea to grow in height based on content */
+    resize: vertical; /* Enables vertical resizing of the textarea by the user */
+}
+
+.form-actions {
+    display: flex; /* Aligns the cancel and submit buttons side by side */
+    justify-content: space-between; /* Distributes space evenly between the buttons, pushing them to the far left and right */
+    margin-top: 1.875rem; /* Adds space above the action buttons */
+}
+
+.cancel-btn {
+    width: 100%; /* Button takes up the full width of its container */
+    background-color: #DA0707; /* Red background color for the cancel button */
+    color: #fff; /* White text color for the cancel button */
+    border: none; /* Removes the border around the button */
+    padding: 0.625rem 1.25rem; /* Padding inside the button for spacing */
+    font-size: 1rem; /* Sets the font size for the button text */
+    border-radius: 0.25rem; /* Slightly rounded corners for the button */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+}
+
+.submit-btn {
+    width: 100%; /* Button takes up the full width of its container */
+    background-color: #A020F0; /* Purple background color for the submit button */
+    color: #fff; /* White text color for the submit button */
+    border: none; /* Removes the border around the button */
+    padding: 0.625rem 1.25rem; /* Padding inside the button for spacing */
+    font-size: 1rem; /* Sets the font size for the button text */
+    border-radius: 0.25rem; /* Slightly rounded corners for the button */
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the button */
+}
+
+.cancel-btn:hover,
+.submit-btn:hover {
+    opacity: 0.8; /* Slightly reduces the opacity on hover to create a visual effect */
+    padding-left: 2rem;
+}
+
+.form-group label {
+    flex: 0 0 12.5rem; /* Sets a fixed width for the labels, keeping them aligned and consistent */
+    margin-right: 1.25rem; /* Space to the right of the label to separate it from the input field */
+    /* text-align: center; Aligns the label text to the center */
+}
+
+.form-input {
+    flex: 1; /* Allows the input field to take up the remaining space next to the label */
+}
+
+.form-input textarea {
+    height: 6.25rem; /* Sets a fixed height for text areas */
+    resize: vertical; /* Allows users to resize text areas vertically */
+}
+
+/* Adjustments to make Fault Category and Severity float left */
+.fault-cat,
+.severity {
+    padding-left: 2rem;
+    width: 30%;
+}
+
+.form-header,
+.form-extra-info {
+    padding: 0 2rem; /* Adds padding around the content in the form header and extra information */
+    overflow-wrap: break-word; /* Ensures text breaks within the content if it’s too long */
+}
+
+/* Ensuring buttons look consistent */
+.cancel-btn,
+.submit-btn {
+    display: inline-block; /* Makes the buttons inline-block elements to align them side by side */
+    width: 48%; /* Adjusts the width to allow the buttons to fit side by side */
+    margin-right: 2%; /* Adds space between the buttons */
+}
+
+/* for the pop up success message */
+.cancel-btn:last-child {
+    margin-right: 0; /* Removes the right margin from the last button */
+}
+
+.success-message {
+    background-color: #d4edda; /* Light green background */
+    color: #155724; /* Dark green text */
+    border: 0.0625rem solid #c3e6cb; /* Green border */
+    padding: 0.9375rem;
+    margin: 10px 0;
+    border-radius: 0.9375rem;
+    position: relative; /* For positioning the close icon */
+}
+
+.cancel-icon {
+    color: red; /* Make the icon red */
+    position: absolute; /* Position it to the top right */
+    top: 1.5rem; /* Adjust to suit your design */
+    right: 2rem; /* Adjust to suit your design */
+    cursor: pointer;
+}
+

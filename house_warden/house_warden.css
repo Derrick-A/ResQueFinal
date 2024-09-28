@@ -1,0 +1,294 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #CFDDE9; /* Background color for content area */
+    height: 100%; /* Ensures the body takes up the full viewport height */
+}
+
+.container .logo h2 {
+    color: #fff;
+}
+
+/* Styling for username within the header */
+header h1 .username {
+    color:#A020F0; /* Purple color for username text */
+}
+
+/* Adds space below the houses section */
+.houses {
+    margin-bottom: 1.875rem; /* Margin below the houses section */
+}
+
+/* Styling for links within the houses section */
+.houses .house-link {
+    background-color: inherit; /* Inherits background color */
+    color: inherit; /* Inherits text color */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: bold; /* Bold text for links */
+    border: none; /* No border for links */
+    padding: 0.625rem 0.4375rem; /* Padding inside the link */
+    margin-right: 0.3125rem; /* Margin to the right of the link */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Styling for active links within the houses section */
+.houses .house-link.active {
+    color:#B45C3D; /* rust like color for active links */
+    border-bottom: 0.3125rem solid #B45C3D; /* rust like   bottom border for active state */
+}
+
+/* Make scrollbar so that only 4 tickets are displayed at a time */
+.scrollbar {
+    width: 100%;
+    min-height: 7.5%;
+    max-height: 7.5%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+/* FEEDBACK AFTER APPROVING REQUEST */
+.success-message {
+    background-color: #d4edda;
+    border: 0.0625rem solid #c3e6cb;
+    color: #155724;
+    padding: 0.9375rem;
+    border-radius: 0.9375rem;
+    margin-top: 1.25rem;
+    position: relative; /* Ensure relative positioning for the icon */
+}
+
+/*  STYLE TO MAKE FEEDBACK div DISAPPEAR */
+.cancel-icon {
+    color: red; /* Make the icon red */
+    position: absolute; /* Position it to the top right */
+    top: 1.5rem; /* Adjust to suit your design */
+    right: 2rem; /* Adjust to suit your design */
+    cursor: pointer;
+}
+
+/* TO MAKE FEEDBACK div DISAPPEAR */
+.cancel-button {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* float: right; - removed */
+}
+
+.cancel-button i {
+    margin-right: 0.5rem;
+}
+
+/* Make table headers stick in place when scrolling */
+table thead {
+    position: sticky;
+    top: 0;
+    background-color:#12222E; /* Ensure background is set to avoid transparency issues */
+    z-index: 1; /* Ensure header stays above the other table content */
+    color: white;
+}
+
+/* Styling for ticket table */
+.ticket-table table {
+    border-collapse: collapse; /* Collapses table borders */
+    border-radius: 0.9375rem; /* Rounded corners for table */
+    background-color: #fff; /* Background color for table */
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    table-layout: fixed;
+    width: 100%; /* Full width table */
+}
+
+/* Padding and border for table header and cells */
+.ticket-table th, .ticket-table td {
+    padding: 1.2rem; /*875rem; /* Padding inside table cells */
+    text-align: left; /* Aligns text to the left */
+    border-bottom: 0.0625rem solid #ddd; /* Light grey bottom border for cells */
+    max-width: 40%;
+    word-wrap: break-word;
+}
+
+
+/* Status indicators within the ticket table */
+.ticket-table .status {
+    padding: 0.3125rem 0.625rem; /* Padding inside status indicators */
+    border-radius: 0.9375rem; /* Rounded corners for status indicators */
+    color: white; /* White text color */
+    font-size: 0.75rem; /* Font size for status text */
+}
+
+/* Styles for processing status */
+.status.processing {
+    color: #333; /* Dark grey text color */
+    border: 0.03125rem solid grey; /* Grey border for processing status */
+}
+
+/* Styles for success status */
+.status.success {
+    border: 0.03125rem solid #81C784; /* Green border for success status */
+    color: #81C784; /* Green text color */
+}
+
+/* Small circular indicators */
+.circle {
+    border-radius: 50%; /* Circular shape */
+    width: 0.4375rem; /* Fixed width */
+    height: 0.4375rem; /* Fixed height */
+    display: inline-block; /* Inline block display */
+}
+
+/* Colors for processing status circle */
+.status.processing .circle {
+    background-color: grey; /* Grey color for processing status circle */
+}
+
+/* Colors for success status circle */
+.status.success .circle {
+    background-color: #81C784; /* Green color for success status circle */
+}
+
+/* priority indicators within the ticket table */
+.ticket-table .priority {
+    padding: 0.3125rem 0.625rem; /* Padding inside priority indicators */
+    border-radius: 0.9375rem; /* Rounded corners for priority indicators */
+    font-size: 0.75rem; /* Font size for priority text */
+    color: white; /* White text color */
+}
+
+/* Colors for high-risk priority */
+.priority.high-risk {
+    color: #ef3e3e; /* Red text color */
+    border: 0.03125rem solid #ef3e3e; /* Red border for high-risk priority */
+}
+
+/* Colors for high-risk priority circle */
+.priority.high-risk .circle {
+    background-color: #ef3e3e; /* Red color for high-risk priority circle */
+}
+
+/* Colors for medium-risk priority */
+.priority.medium-risk {
+    border: 0.03125rem solid #C6C781; /* Green border for low-risk priority */
+    color: #C6C781; /* Green text color */
+}
+
+/* Colors for medium-risk priority circle */
+.priority.medium-risk .circle {
+    background-color: #C6C781; /* Green color for low-risk priority circle */
+}
+
+/* Colors for low-risk priority */
+.priority.low-risk {
+    border: 0.03125rem solid #81C784; /* Green border for low-risk priority */
+    color: #81C784; /* Green text color */
+}
+
+/* Colors for low-risk priority circle */
+.priority.low-risk .circle {
+    background-color: #81C784; /* Green color for low-risk priority circle */
+}
+
+/* Maintenance requests section styling */
+.maintenance-requests {
+    /* position: sticky;
+    top: 0; */
+    margin-top: 1.5625rem; /* Margin at the top of the section */
+    padding: 0.5rem 1.875rem; /* Padding inside the section */
+    background-color: white; /* White background color */
+    border-radius: 0.9375rem; /* Rounded corners */
+    width: 95%; /* Width of maintenance request section */
+}
+
+/* Maintenance requests scrollbar */
+.maintenance-scrollbar {
+    /* width: 96%; */
+    /* height: 9%; */
+    position: sticky;
+    top: 0;
+    min-height: 6%;
+    max-height: 6%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Header in maintenance requests section */
+.maintenance-requests #h2 {
+    font-size: 1.375rem; /* Font size for header */
+}
+
+/* Styling for maintenance requests header */
+#maintenance-requests-header {
+    font-weight: bold; /* Bold text for header */
+    margin-top: 0.3125rem; /* Margin at the top */
+    margin-bottom: 0.5rem; /* Margin at the bottom */
+    /* position: sticky; */
+    top: 0;
+    /* background-color: lightgray; */
+    z-index: 100;
+}
+
+/* Individual requests styling within maintenance requests */
+.maintenance-requests .request {
+    background-color: #f4f4f4; /* Light grey background for requests */
+    padding: 0.9375rem; /* Padding inside request cards */
+    border-radius: 0.9375rem; /* Rounded corners */
+    margin-bottom: 2.5rem; /* Put space between the list of maintenance requests */
+}
+
+/* Padding on the left side of request information */
+.request-info {
+    padding-left: 1.125rem; /* Padding for request information */
+}
+
+/* Floats buttons on the right side of the request card */
+.request-btns {
+    float: right; /* Aligns buttons to the right */
+}
+
+/* Styling for approve, delete, and comment buttons */
+.approve-btn, .delete-btn, .comment-btn {
+    padding: 0.625rem 1.25rem; /* Padding inside buttons */
+    border: none; /* Removes border */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-right: 0.625rem; /* Margin to the right of buttons */
+    border-radius: 0.3125rem; /* Rounded corners for buttons */
+    font-size: 0.875rem; /* Font size for button text */
+}
+
+/* Floats top buttons inline to the end of the request card */
+.request-top-btns {
+    float: inline-end; /* Aligns buttons to the end (right) */
+}
+
+/* Styles the approve button */
+.approve-btn {
+    color: #A020F0; /* Purple text color */
+    font-weight: bold; /* Bold font for approve button */
+    font-size: 1.0625rem; /* Font size for approve button */
+    margin-right: 5%; /* Margin to the right of the button */
+    float: inline-end; /* Floats button to the end (right) */
+}
+
+/* Styles the delete button */
+.delete-btn {
+    color: #ef3e3e; /* Red text color */
+}
+
+/* Styles the "View All" button */
+.view-all {
+    background-color: white; /* White background color */
+    font-weight: bold; /* Bold font */
+    font-size: 0.9375rem; /* Font size for button */
+    padding: 0.75rem; /* Padding inside the button */
+    border: 0.009375rem solid rgb(165, 164, 164); /* Border color */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 0.4375rem; /* Rounded corners for button */
+    margin: -0.625rem 0.625rem 1.875rem 0; /* Margin around the button */
+    float: right; /* Floats button to the right */
+}

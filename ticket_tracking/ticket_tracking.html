@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Tracking</title>
+    <link rel="icon" type="image/x-icon" href="pictures/resque-logo.png">
+    <link rel="stylesheet" href="ticket_tracking.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ddbf4d6190.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--Sidebar section for navigation-->
+        <aside class="sidebar">
+            <div class="logo">ResQue</div>
+
+            <!--Search bar in the sidebar-->
+            <form action="" class="search">
+                <span class="search-icon material-symbols-outlined">search</span>
+                <input class="search-input" type="search" name="search-field" id="search-field" placeholder="Search">
+            </form>
+
+            <!-- Navigation menu in the sidebar -->
+            <nav>
+                <ul>
+                    <!-- Navigation links with icons -->
+                    <li id="log-faults"><a class="sidebar-links" href="../ticket_creation/ticketCreation.html"><img src="pictures/receipt-add.png" alt="Log faults">Log Faults</a></li>
+                    <li id="log-faults"><a class="sidebar-links" href="../ticket_creation/ticketCreation.html"><img src="pictures/receipt-add.png" alt="Log faults">Log Faults</a></li>
+                    <li id="all-tickets"><a class="sidebar-links" href="#"><img src="pictures/receipt-icon.png" alt="All tickets">All Tickets</a></li>
+                    <li id="open-tickets"><a class="sidebar-links" href="#"><img src="pictures/layer.png" alt="layer">Open Tickets</a></li>
+                    <li id="closed-tickets"><a class="sidebar-links" href="#"><img src="pictures/clipboard-tick.png" alt="clipboard-tick">Closed Tickets</a></li>
+                </ul>
+            </nav>
+    
+            <!-- <hr id="sidebar-hr"> -->
+    
+            <!-- Profile section at the bottom of the sidebar -->
+            <div class="profile">
+                <!-- Profile picture area -->
+                <div class="profile-pic">YR</div>
+                <!-- Profile information area -->
+                <div class="profile-info">
+                    <span id="user-name" class="username">Yeukai Runyowa</span><br>
+                    <span class="role">Student</span>
+                </div>
+                <!-- Logout button with icon -->
+                <div id="sidebar-log-out">
+                    <a href="#"><i class="fa-solid fa-arrow-right-from-bracket fa-xl" style="color: #B197FC;"></i></a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Ticket Tracking section -->
+        <main class="content">
+            <header>
+                <div>
+                    <h1>Ticket Tracking<br></h1>
+                    <p class="fade-out">View logged tickets and make comments.</p>
+                </div>
+                <!-- Fix the logo size -->
+                 <div class="logo-container">
+                    <img src="pictures/resque-logo.png" alt="Logo" width="150" height="110">
+                </div>
+            </header>
+
+            <!--TEMPORARY Form for userID input
+            <section class="user-id-input">
+                <h3>Enter User ID to View Tickets</h3>
+                <form action="ticket_tracking.php" method="POST">
+                    <label for="userID">User ID:</label>
+                    <input type="text" id="userID" name="userID" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+            <br><br> -->
+
+            <!-- Flex container for the ticket list and ticket detail -->
+            <div class="content-wrapper">
+                <!-- Section for the list of tickets -->
+                <section class="ticket-list">
+                    <a href="../ticket_creation/ticketCreation.html"><button class="add-ticket">+ Add New Ticket</button></a>
+                    <a href="../ticket_creation/ticketCreation.html"><button class="add-ticket">+ Add New Ticket</button></a>
+                    <br>
+                    <h3>Your Tickets</h3>
+                    <h3>Your Tickets</h3>
+                    <table class="ticket-table">
+                        <!-- Ticket Row 1 -->
+                        <tr class="ticket-card">
+                            <td class="ticket-number"><img src="pictures/clipboard-tick.png" alt="clipboard-tick" style="margin-right: 10px;">#123454</td>
+                            <td><span class="status pending"><span class="circle"></span>&nbsp;&nbsp;Pending</span></td>
+                            <td><button class="details-button" onclick="showDetails('734959')">View Details</button></td>
+                        </tr>
+                
+                        <!-- Ticket Row 2 -->
+                        <tr class="ticket-card">
+                            <td class="ticket-number"><img src="pictures/clipboard-tick.png" alt="clipboard-tick" style="margin-right: 10px;">#849506</td>
+                            <td><span class="status processing"><span class="circle"></span>&nbsp;&nbsp;Processing</span></td>
+                            <td><button class="details-button" onclick="showDetails('734959')">View Details</button></td>
+                        </tr>
+                    </table>
+
+                    <h3>Residence Tickets</h3>
+                    <table class="ticket-table">
+                    </table>
+
+                    <h3>Residence Tickets</h3>
+                    <table class="ticket-table">
+                        <!-- Ticket Row 3 -->
+                        <tr class="ticket-card">
+                            <td class="ticket-number"><img src="pictures/clipboard-tick.png" alt="clipboard-tick" style="margin-right: 10px;">#734959</td>
+                            <td><span class="status rejected"><span class="circle"></span>&nbsp;&nbsp;Rejected</span></td>
+                            <td><button class="details-button" onclick="showDetails('734959')">View Details</button></td>
+                        </tr>
+                
+                        <!-- Ticket Row 4 -->
+                        <tr class="ticket-card">
+                            <td class="ticket-number"><img src="pictures/clipboard-tick.png" alt="clipboard-tick" style="margin-right: 10px;">#570765</td>
+                            <td><span class="status processing"><span class="circle"></span>&nbsp;&nbsp;Processing</span></td>
+                            <td><button class="details-button" onclick="showDetails('734959')">View Details</button></td>
+                        </tr>
+                    </table>
+                </section>
+                
+
+                <!-- Section for the detailed view of a single ticket -->
+                <section class="ticket-detail">
+                    <article class="ticket-info">
+                        <img src="pictures/leak.jpg" alt="Ticket Image">
+                        <h3>Ticket Details</h3>
+                        <table class="info-table">
+                            <tr>
+                                <td class="info-cell">
+                                    <span class="info-label">Ticket Number:</span>
+                                    <span class="info-data">#123454</span>
+                                </td>
+                                <td class="info-cell">
+                                    <span class="info-label">Residence:</span>
+                                    <span class="info-data">Cory House</span>
+                                </td>
+                                <td class="info-cell">
+                                    <span class="info-label">Category:</span>
+                                    <span class="info-data">Plumbing</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="info-cell">
+                                    <span class="info-label">Room Number:</span>
+                                    <span class="info-data">21</span>
+                                </td>
+                                <td class="info-cell">
+                                    <span class="info-label">Comments:</span>
+                                    <span class="info-data">2</span>
+                                </td>
+                                <td class="info-cell">
+                                    <span class="info-label">Status:</span>
+                                    <span class="info-data">Processing</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </article>
+                </section>
+            </div>
+        </main>
+
+
+    </div>
+    <!-- Link to external JavaScript file -->
+    <script src="ticket_tracking.js"></script>
+</body>
+</html>

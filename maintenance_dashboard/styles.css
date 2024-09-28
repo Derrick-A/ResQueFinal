@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #CFDDE9; /* Background color for content area */
+    height: 100%; /* Ensures the body takes up the full viewport height */
+}
+
+.container {
+    display: flex;
+    height: 100%; /* Container spans the full height of the viewport */
+}
+
+.container .logo h2 {
+    color: #fff;
+}
+
+/* Sidebar section with fixed position for navigation */
+.sidebar {
+    background-color: #12222E;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 17.5rem; /* Fixed width for sidebar */
+    width: 15rem; /* Fixed width for sidebar */
+    padding: 1.25rem; /* Padding for spacing inside the sidebar */
+    height: 100vh; /* Sidebar spans full viewport height */
+}
+
+/* Styling for active links within the sidebar-links section */
+.sidebar-links.active {
+    background-color:#B45C3D;
+    color:white;
+}
+
+/* Profile section within the sidebar */
+.sidebar .profile {
+    position: absolute;
+    font-size: 0.85rem; /* Adjusted font size for profile text */
+    bottom: 2.5rem; /* Positioned at the bottom of the sidebar */
+    width: 100%;
+    text-align: left; /* Aligns profile text to the left */
+    display: flex;
+    flex-direction: row;
+}
+/* Profile picture styling */
+.profile-pic {
+    background-color: #ddd;
+    color: #333;
+    width: 2.8125rem; /* Fixed width for profile picture */
+    height: 2.8125rem; /* Fixed height for profile picture */
+    border-radius: 50%; /* Circular profile picture */
+    margin: 0 auto;
+    line-height: 3.125rem; /* Center text vertically */
+    font-size: 1.25rem; /* Font size for text inside the profile picture */
+    float: left; /* Floats profile picture to the left */
+    text-align: center; /* Centers text horizontally */
+}
+
+/* Profile info styling */
+.profile-info {
+    margin-left: 1.25rem; /* Margin for spacing between profile picture and info */
+    font-weight: bold; /* Bold font for profile information */
+    flex-grow: 1; /* Allows profile info to grow and fill available space */
+    line-height: 1.9375rem; /* Line height for readability */
+}
+
+/* Styling for role text within profile info */
+.sidebar .profile-info .role {
+    font-weight: lighter; /* Lighter font weight for role text */
+}
+
+/* Log out button within the sidebar */
+#sidebar-log-out {
+    float: right; /* Aligns log out button to the right */
+    flex-grow: 1.5; /* Expands log out button's width */
+}
+
+/* Search bar styling */
+.search {
+    --padding: 0.875rem; /* Padding for search bar */
+    display: flex;
+    align-items: center; /* Aligns items within the search bar */
+    padding: var(--padding); /* Uses variable padding */
+    border-radius: 0.5rem; /* Rounded corners for search bar */
+    background: #ddd; /* Background color for search bar */
+    width: 13.4375rem; /* Fixed width for search bar */
+}
+
+/* Input field within the search bar */
+.search-input {
+    font-size: 1rem; /* Font size for search input */
+    font-family: 'Inter', sans-serif;
+    color: #333333; /* Text color for search input */
+    margin-left: var(--padding); /* Margin for spacing from the search bar edge */
+    outline: none; /* Removes outline */
+    border: none; /* Removes border */
+    background: transparent; /* Transparent background for input */
+    flex: 1; /* Allows input to expand within the search bar */
+    transition: background 0.25s; /* Smooth transition for background color change */
+}
+
+/* Focus state for the search bar */
+.search:focus-within {
+    background: #f6f6f6; /* Background color on focus */
+}
+
+/* Placeholder and icon color within the search bar */
+.search-input::placeholder,
+.search-icon {
+    color: #666; /* Color for placeholder text and search icon */
+}
+
+/* Removes bullet points from navigation list */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Spacing between list items in navigation */
+nav ul li {
+    margin-bottom: 0.9375rem; /* Margin below each list item */
+}
+
+/* Navigation link styling */
+nav ul li a {
+    align-items: center; /* Aligns items within the link */
+    text-decoration: none; /* Removes underline from links */
+    color: white; /* Sets text color for links */
+    font-size: 1.125rem; /* Font size for navigation links */
+    display: block; /* Makes link a block-level element */
+    padding: 0.9375rem; /* Padding for spacing inside the link */
+    border-radius: 0.5rem; /* Rounded corners for links */
+    transition: background-color 0.25s; /* Smooth transition for background color */
+    width: 13.4375rem; /* Matches the width of the search bar */
+}
+
+/* Icon inside navigation link */
+nav ul li a img {
+    margin-right: 0.5rem; /* Margin for spacing between icon and text */
+    width: 1.5rem; /* Fixed width for icon */
+    height: 1.5rem; /* Fixed height for icon */
+    object-fit: contain; /* Ensures icon fits within specified dimensions */
+}
+
+/* Hover state for navigation links */
+nav ul li a:hover {
+    background-color:#B45C3D; /* Background color on hover */
+}
+
+/* Profile section at the bottom of the sidebar */
+.profile {
+    text-align: left;
+    margin-top: auto; /* Pushes profile section to the bottom */
+    padding: 0.5625rem; /* Padding around profile section */
+    border-top: 0.0625rem solid #ddd; /* Top border for separation */
+    position: relative; /* Allows for positioning of pseudo-elements */
+    color: white;
+}
+
+/* Styling for role text */
+.role {
+    color: white; /* Color for role text */
+}
+
+/* Main content area styling */
+.content {
+    flex-grow: 1; /* Allows content area to fill available space */
+    padding: 2.5rem; /* Padding inside the content area */
+    padding-right: 5rem; /* Extra padding on the right */
+    background-color:#CFDDE9; /* Background color for content area */
+    position: relative; /* Allows for positioning of child elements */
+    margin-left: 17.5rem; /* Aligns content next to the sidebar */
+    max-width: 100%;
+}
+
+/* Adds space below the header inside the main content area */
+.content header {
+    margin-bottom: 1.875rem; /* Space below the header */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem; /* 20px converted to rem */
+}
+
+.filters span {
+    margin: 0 0.625rem; /* 10px converted to rem */
+}
+
+.filters input[type="date"] {
+    padding: 0.3125rem; /* 5px converted to rem */
+    border: 0.0625rem solid #d1d5db; /* 1px border converted to rem */
+    border-radius: 0.3125rem; /* 5px border radius converted to rem */
+}
+
+.stats-overview{
+    /* width: 60rem; */
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.875rem; /* 30px converted to rem */
+}
+
+
+
+.sta-img {
+    background-color: black;
+    width: 5rem;
+    border-radius: 7rem; 
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    width: 20.5rem; /* 300px converted to rem */
+    padding: 1.25rem; /* 20px converted to rem */
+    background-color: #f9fafb;
+    border-radius: 0.625rem; /* 10px border radius converted to rem */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* 2px 4px shadow converted to rem */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    margin-right: 0.5rem;
+    flex: 1;
+}
+
+#total-card {
+    margin-left: 8rem;
+}
+
+.card-icon {
+    background-color:#12222E;
+    border-radius: 50%;
+    padding: 0.625rem; /* 10px padding converted to rem */
+    display: inline-block;
+    margin-bottom: 0.625rem; /* 10px margin-bottom converted to rem */
+    margin-right: 0.9375rem; /* 15px margin-right converted to rem */
+}
+
+.card-icon1 {
+    background-color:#12222E;
+    border-radius: 50%;
+    padding: 0.625rem; /* 10px padding converted to rem */
+    display: inline-block;
+    margin-bottom: 0.625rem; /* 10px margin-bottom converted to rem */
+    margin-right: 0.9375rem; /* 15px margin-right converted to rem */
+}
+
+.card-icon2 {
+    background-color: #12222E;
+    border-radius: 50%;
+    padding: 0.625rem; /* 10px padding converted to rem */
+    display: inline-block;
+    margin-bottom: 0.625rem; /* 10px margin-bottom converted to rem */
+    margin-right: 0.9375rem; /* 15px margin-right converted to rem */
+}
+
+.card-icon3 {
+    background-color: #12222E;
+    border-radius: 50%;
+    padding: 0.625rem; /* 10px padding converted to rem */
+    display: inline-block;
+    margin-bottom: 0.625rem; /* 10px margin-bottom converted to rem */
+    margin-right: 0.9375rem; /* 15px margin-right converted to rem */
+}
+
+.card-icon img, 
+.card-icon1 img, 
+.card-icon2 img, 
+.card-icon3 img {
+    width: 2.5rem; /* 40px width converted to rem */
+    height: 2.5rem; /* 40px height converted to rem */
+}
+
+.card-number {
+    font-size: 1.5rem; /* 24px font size converted to rem */
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    font-size: 0.875rem; /* 14px font size converted to rem */
+    color: #888;
+}
+
+.card-info {
+    text-align: left;
+    align-items: center;
+}
+
+.chartlayout {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    min-width: 100%;
+    gap: 1rem;
+}
+
+.charts {
+    max-width: 50rem; /* 800px width converted to rem */
+    /*  */
+    max-width: 50rem ;
+    max-width: 100%;
+    /* flex: 1; */
+    /*  */
+    height: 30rem; /* 480px height converted to rem */
+    background: #fff;
+    padding: 1.25rem; /* 20px padding converted to rem */
+    margin-left: 0.30rem; /* 15px margin-left converted to rem */
+    border-radius: 0.5rem; /* 8px border radius converted to rem */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px 8px shadow converted to rem */
+}
+
+#line-chart {
+    flex: 2.5;
+}
+
+#ticketsChart {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+}
+
+/* #Barchart {
+    max-width: 37.5rem;
+    max-height: 25rem;
+} */
+
+
+
+.houses {
+    margin-bottom: 1.875rem; /* Margin below the houses section */
+}
+
+/* Styling for links within the houses section */
+.houses .house-link {
+    background-color: inherit; /* Inherits background color */
+    color: inherit; /* Inherits text color */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: bold; /* Bold text for links */
+    border: none; /* No border for links */
+    padding: 0.625rem 0.4375rem; /* Padding inside the link */
+    margin-right: 0.3125rem; /* Margin to the right of the link */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Styling for active links within the houses section */
+.houses .house-link.active {
+    color:#B45C3D; /* Purple color for active links */
+    border-bottom: 0.3125rem solid #B45C3D; /* Purple bottom border for active state */
+}
+
+.cards {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    margin: -0.5rem; /* Adjust margin for spacing */
+}
+
+
+

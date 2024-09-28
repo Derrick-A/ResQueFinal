@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Staff</title>
+    <link rel="icon" type="image/x-icon" href="pictures/resque-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />    
+    <link rel="stylesheet" href="maintenance.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar section for navigation -->
+        <aside class="sidebar">
+            <div class="logo"><h2>ResQue</h2></div>
+            
+            <!-- search bar -->
+            <form action="" class="search">
+                <span class="search-icon material-symbols-outlined">search</span>
+                <input class="search-input" type="search" name="search-field" id="search-field" placeholder="Search">
+            </form>
+            
+            <!-- Navigation menu in the sidebar -->
+            <nav>
+                <ul>
+                    <li id="logFaults"><a href="#"><img src="pictures/receipt-add.png" alt="receipt-add">Log faults</a></li> <!--style="background-color: #A020F0;" -->
+                    <li id="allTickets"><a href="#"><img src="pictures/receipt-icon.png" alt="receipt-icon">All Tickets</a></li>
+                    <li id="openTickets"><a href="#"><img src="pictures/layer.png" alt="layer">Open Tickets</a></li>
+                    <li id="closedTickets"><a href="#"><img src="pictures/clipboard-tick.png" alt="clipboard-tick">Closed Tickets</a></li>
+                    <!-- <li id="statistics"><a class="sidebar-links" href="#"><img src="images/bar-chart-icon.png" alt="bar chart icon">Statistics</a></li>height="18px" -->
+                </ul>
+            </nav>
+    
+            <!-- <hr id="sidebar-hr"> -->
+    
+            <!-- the user information at the bottom -->
+            <div class="profile">
+                <!-- Profile picture area -->
+                <div class="profile-pic">AM</div>
+                <!-- Profile information area -->
+                <div class="profile-info">
+                    <span id="user-name" class="username">Jesus Christ</span><br>
+                    <span class="role">Student</span>
+                </div>
+                <!-- Logout button with icon -->
+                <div id="sidebar-log-out">
+                    <a href="#"><i class="fa-solid fa-arrow-right-from-bracket fa-xl" style="color: #B197FC;"></i></a>
+                </div>
+             </div>
+         </aside>
+        
+        <!-- Main content section -->
+        <main class="content">
+            <header>
+                <!-- Welcome message -->
+                <h1>Welcome, <span class="username">Maintenance Staff </span></h1>
+                <p>Access & Manage maintenance requisitions efficiently.</p>
+            </header>
+            <!-- House selection links -->
+            <section>
+            <div class="houses">
+                <a href="" class="house-link active">Cory House</a>
+                <a href="" class="house-link">Starling House</a>
+                <a href="" class="house-link">Botha House</a>
+                <a href="" class="house-link">Dingemans House</a>
+            </div>
+            <!-- Ticket table section -->
+            <div class="ticket-table">
+                <table>
+                    <thead>
+                        <!-- Table headers -->
+                        <tr>
+                            <th>Ticket Number</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Example table rows with data -->
+                        <tr>
+                            <td>#183692</td>
+                            <td>Broken Window</td>
+                            <td><span class="status processing"><span class="circle"></span>&nbsp;&nbsp;Processing</span></td>
+                            <td>Wed 13:00pm</td>
+                            <td><span class="category high-risk"><span class="circle"></span>&nbsp;&nbsp;High Risk</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#289377</td>
+                            <td>Ceiling Fell</td>
+                            <td><span class="status success"><span class="circle"></span>&nbsp;&nbsp;Success</span></td>
+                            <td>Fri 16:10pm</td>
+                            <td><span class="category high-risk"><span class="circle"></span>&nbsp;&nbsp;High Risk</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#389383</td>
+                            <td>Faulty plug</td>
+                            <td><span class="status processing"><span class="circle"></span>&nbsp;&nbsp;Processing</span></td>
+                            <td>Tue 18:10pm</td>
+                            <td><span class="category low-risk"><span class="circle"></span>&nbsp;&nbsp;Low Risk</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#388898</td>
+                            <td>No Door Handle</td>
+                            <td><span class="status success"><span class="circle"></span>&nbsp;&nbsp;Success</span></td>
+                            <td>Thur 23:10pm</td>
+                            <td><span class="category high-risk"><span class="circle"></span>&nbsp;&nbsp;High Risk</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#298569</td>
+                            <td>Leaking ceiling</td>
+                            <td><span class="status success"><span class="circle"></span>&nbsp;&nbsp;Success</span></td>
+                            <td>Sat 00:10am</td>
+                            <td><span class="category high-risk"><span class="circle"></span>&nbsp;&nbsp;High Risk</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#123569</td>
+                            <td>Broken door frame</td>
+                            <td><span class="status processing"><span class="circle"></span>&nbsp;&nbsp;Processing</span></td>
+                            <td>Sun 222:10pm</td>
+                            <td><span class="category low-risk"><span class="circle"></span>&nbsp;&nbsp;Low Risk</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#896569</td>
+                            <td>Window glass broken</td>
+                            <td><span class="status success"><span class="circle"></span>&nbsp;&nbsp;Success</span></td>
+                            <td>Thur 23:10pm</td>
+                            <td><span class="category high-risk"><span class="circle"></span>&nbsp;&nbsp;Low Risk</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>#300000</td>
+                            <td>Carpet smell</td>
+                            <td><span class="status success"><span class="circle"></span>&nbsp;&nbsp;Success</span></td>
+                            <td>Thur 12:10pm</td>
+                            <td><span class="category low-risk"><span class="circle"></span>&nbsp;&nbsp;Low Risk</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,642 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up the full viewport height */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem; /* Sets base size for rem units */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding-top: 5.5rem; /* Space for the fixed header */
+    background-image: url(../landing_page/pictures/wrenchtoys.jpg);
+    color: black; /* also changes the colour of the text in the boxes */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Container */
+.container {
+    flex: 1; /* Makes the container grow and take up the remaining space */
+    display: flex;
+    flex-direction: column;
+    width: 80%; /* Fluid grid: adjusts width based on screen size */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Images and Iframes */
+img {
+    max-width: 100%; /* Flexible image: resizes based on container width */
+    height: auto;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Everything regarding the header section of the page */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #12222E;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+    height: 5.5rem;
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+/* styling of the logo */
+header .logo {
+    height: 100px; /* Adjust the height as needed */
+    max-width: 100%; /* Ensure logo is responsive */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.875rem;
+    justify-content: center;
+    flex: 2;
+}
+
+.nav-links li a {
+    padding: 0.625rem 1.25rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 1.25rem; /* Set border-radius initially to avoid layout shift */
+}
+
+.nav-links li a:hover {
+    background-color: #B45C3D;
+    color: white;
+    cursor: pointer;
+}
+
+
+/* Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(1.875rem);
+        /* 30px in rem */
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+/* the buttons on the top right  */
+.login-btn,
+.signup-btn {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    background-color: #B45C3D;
+    color: white;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.sign-in-btn:hover,
+.sign-up-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 1.25rem;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #ff5a3c;
+    margin: 4px;
+}
+
+/* Hide Checkbox */
+#burger-toggle {
+    display: none;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu a {
+    padding: 1rem 0;
+    color: #ff5a3c;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Show Mobile Menu When Checkbox is Checked */
+#burger-toggle:checked ~ .mobile-menu {
+    display: flex;
+}
+
+#burger-toggle:checked ~ nav ul {
+    display: none;
+}
+
+/* Media Query for Responsive Navigation */
+@media (max-width: 1200px) {
+    .nav-links {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+}
+
+/* SECTION 1 */
+/* Hero section: Main content area */
+.hero {
+    padding: 21rem 2rem;      
+}
+
+h2 {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 65px;
+    line-height: 110%;
+    /* or 70px */
+    letter-spacing: -0.01em;
+    color: black;
+    /* Main Color/Black */
+    margin-bottom: 60%;
+    /*to move a bit lower*/
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    /* cool animation */
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+/* animation */
+h2, p, .hero-image {
+    display: block;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: pull-up 1s forwards;
+}
+
+h2, p, .hero-image:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+h2, p, .hero-image:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+h2, .words, .hero-image:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* Add more delays if necessary */
+@keyframes pull-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Headline */
+.hero-content h2 {
+ /* Adjust size for larger screens */
+    margin-bottom: 1rem;
+    color: #000929;
+    line-height: 1.5;
+}
+
+/* Paragraph in hero section */
+.hero-content p {
+    font-size: 1.25rem;
+    color: #000929;
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Media Query for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+    .hero-content h2 {
+        font-size: 2.5rem; /* Adjust headline size */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Adjust text size */
+    }
+
+    .hero-image {
+        padding-left: 0;
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .hero {
+        flex-direction: column; /* Stack content on smaller screens */
+    }
+
+    .hero-content h2 {
+        font-size: 2rem; /* Adjust headline size for mobile */
+    }
+
+    .hero-content p {
+        font-size: 0.9rem; /* Smaller text for mobile */
+    }
+
+    .hero-image {
+        margin-top: 1.5rem;
+        max-width: 100%; /* Ensure the image fits mobile screens */
+    }
+
+   
+}
+
+/* Footer */
+.footer {
+    background-color: #12222E; /* Same color as the header */
+    color: white;
+    padding: 2rem 0; /* Padding for space inside the footer */
+    text-align: center; /* Center the content */
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    position: relative;
+    margin-top: auto; /* Pushes the footer to the bottom if content is short */
+}
+
+/* Footer Links */
+.footer-links {
+    display: flex;
+    justify-content: center; /* Center the footer links */
+    gap: 2rem; /* Space between the links */
+    margin-bottom: 1rem; /* Space below the links */
+    
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #B45C3D; /* Same hover effect as other links */
+}
+
+/* Footer text (copyright) */
+.footer p {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #ddd; /* Lighter text for the copyright */
+}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column; /* Stack the links vertically on smaller screens */
+        gap: 1rem;
+    }
+}
+
+
+/* Card Section */
+.card-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px auto;
+    max-width: 1800px;
+    height: 500px;
+}
+
+.card {
+    border-radius: 20px;
+    /* for the words in the boxes */
+    padding: 70px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h4 {
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family:'Inter', sans-serif ;
+    font: white;
+}
+
+.highlight {
+    color: #ff5e42;
+    font-weight: bold;
+}
+
+/* Card 1: about us */
+.about {
+    background-color: #CFDDE9;
+}
+.about img{
+    width: 182px;
+    height: 200px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+/* Card 2: what do we do */
+.what-wedo {
+    background-color: #12222E;
+}
+.what-wedo img{
+    width: 250px;
+    height: 210px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+.what-wedo .growth {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Card 3: Tutorials */
+.contact {
+    background-color: #B45C3D;
+    font: white;
+}
+
+
+
+/* Sign-up section hidden by default */
+.signup-section {
+    display: none; /* Hidden by default */
+    position: relative;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 3rem 1rem;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(100%); /* Off-screen initially */
+}
+
+/* When the signup section is active */
+.signup-section.show {
+    display: block;
+    transform: translateY(0); /* Slide up into view */
+}
+
+.signup-section h1, .signup-section p {
+    text-align: center;
+}
+
+.signup-section form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.signup-section input, .signup-section select {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#signup-submit-btn {
+    background-color: #12222E;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.signup-section .close-btn1 {
+    display: inline-block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from top and centered */
+    padding: 2rem;
+    border-radius: 8px;
+    width: 80%; /* Could be more or less depending on screen size */
+    max-width: 600px;
+}
+
+/* Close Button */
+.close-btn {
+    color: #000;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Login Form */
+.login-form h1 {
+    font-size: 2rem;
+    color: #000929;
+    margin-bottom: 1rem;
+}
+
+.login-form p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-form a.forgot-password {
+    display: block;
+    color: #B45C3D;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.login-form a.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-form input[type="submit"] {
+    background-color: #12222E;
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #0d1a26;
+}
+
+.login-form p {
+    font-size: 0.875rem;
+}
+
+.login-form p a {
+    color: #B45C3D;
+    text-decoration: none;
+}
+
+.login-form p a:hover {
+    text-decoration: underline;
+}
+
+/* Show Modal */
+.login-body .show {
+    display: block; /* Show modal */
+}
+
+/* article section for when users scroll */
+.page-on-home {
+    padding: 2rem;
+}
+
+.info-section {
+    margin-bottom: 4rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.info-text {
+    flex: 2;
+    margin-right: 2rem;
+}
+
+
+

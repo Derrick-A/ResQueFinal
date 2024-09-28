@@ -1,0 +1,178 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #CFDDE9; /* Background color for content area */
+    height: 100%; /* Ensures the body takes up the full viewport height */
+}
+
+.container {
+    display: flex;
+    height: 100%; /* Container spans the full height of the viewport */
+}
+
+.container .logo h2 {
+    color: #fff;
+}
+
+/* Main content area styling */
+.content {
+    flex-grow: 1; /* Allows content area to fill available space */
+    padding: 2.5rem; /* Padding inside the content area */
+    padding-right: 5rem; /* Extra padding on the right */
+    position: relative; /* Allows for positioning of child elements */
+    margin-left: 17.5rem; /* Aligns content next to the sidebar */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem; /* 20px converted to rem */
+}
+
+.filters span {
+    margin: 0 0.625rem; /* 10px converted to rem */
+}
+
+.filters input[type="date"] {
+    padding: 0.3125rem; /* 5px converted to rem */
+    border: 0.0625rem solid #d1d5db; /* 1px border converted to rem */
+    border-radius: 0.3125rem; /* 5px border radius converted to rem */
+}
+
+.stats-overview{
+    width: 60rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.875rem; /* 30px converted to rem */
+}
+
+
+
+.sta-img {
+    background-color: black;
+    width: 5rem;
+    border-radius: 7rem; 
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    width: 20.5rem; /* 300px converted to rem */
+    padding: 1.25rem; /* 20px converted to rem */
+    background-color: #f9fafb;
+    border-radius: 0.625rem; /* 10px border radius converted to rem */
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1); /* 2px 4px shadow converted to rem */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    align-items: center;
+    margin-right: 0.5rem;
+}
+
+.card-icon {
+    background-color:#12222E;
+    border-radius: 50%;
+    padding: 0.625rem; /* 10px padding converted to rem */
+    display: inline-block;
+    margin-bottom: 0.625rem; /* 10px margin-bottom converted to rem */
+    margin-right: 0.9375rem; /* 15px margin-right converted to rem */
+}
+
+.card-icon1 {
+    background-color:#12222E;
+    border-radius: 50%;
+    padding: 0.625rem; /* 10px padding converted to rem */
+    display: inline-block;
+    margin-bottom: 0.625rem; /* 10px margin-bottom converted to rem */
+    margin-right: 0.9375rem; /* 15px margin-right converted to rem */
+}
+
+.card-icon2 {
+    background-color: #12222E;
+    border-radius: 50%;
+    padding: 0.625rem; /* 10px padding converted to rem */
+    display: inline-block;
+    margin-bottom: 0.625rem; /* 10px margin-bottom converted to rem */
+    margin-right: 0.9375rem; /* 15px margin-right converted to rem */
+}
+
+.card-icon3 {
+    background-color: #12222E;
+    border-radius: 50%;
+    padding: 0.625rem; /* 10px padding converted to rem */
+    display: inline-block;
+    margin-bottom: 0.625rem; /* 10px margin-bottom converted to rem */
+    margin-right: 0.9375rem; /* 15px margin-right converted to rem */
+}
+
+.card-icon img, 
+.card-icon1 img, 
+.card-icon2 img, 
+.card-icon3 img {
+    width: 2.5rem; /* 40px width converted to rem */
+    height: 2.5rem; /* 40px height converted to rem */
+}
+
+.card-number {
+    font-size: 1.5rem; /* 24px font size converted to rem */
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    font-size: 0.875rem; /* 14px font size converted to rem */
+    color: #888;
+}
+
+.card-info {
+    text-align: left;
+    align-items: center;
+}
+
+.charts {
+    max-width: 50rem; /* 800px width converted to rem */
+    height: 30rem; /* 480px height converted to rem */
+    background: #fff;
+    padding: 1.25rem; /* 20px padding converted to rem */
+    margin-left: 0.30rem; /* 15px margin-left converted to rem */
+    border-radius: 0.5rem; /* 8px border radius converted to rem */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* 4px 8px shadow converted to rem */
+}
+
+#ticketsChart {
+    width: 100%;
+    height: 100%;
+}
+
+#Barchart {
+    max-width: 600px;
+    max-height: 400px;
+}
+
+.chartlayout {
+    display: flex;
+    flex-direction: row;
+}
+
+.houses {
+    margin-bottom: 1.875rem; /* Margin below the houses section */
+}
+
+/* Styling for links within the houses section */
+.houses .house-link {
+    background-color: inherit; /* Inherits background color */
+    color: inherit; /* Inherits text color */
+    text-decoration: none; /* Removes underline from links */
+    font-weight: bold; /* Bold text for links */
+    border: none; /* No border for links */
+    padding: 0.625rem 0.4375rem; /* Padding inside the link */
+    margin-right: 0.3125rem; /* Margin to the right of the link */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Styling for active links within the houses section */
+.houses .house-link.active {
+    color:#B45C3D; /* Purple color for active links */
+    border-bottom: 0.3125rem solid #B45C3D; /* Purple bottom border for active state */
+}
